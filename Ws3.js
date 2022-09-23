@@ -1,4 +1,4 @@
-
+//Exercise 1
 function omaFunktio() {
 
     var p = new Date()
@@ -82,6 +82,7 @@ function myTable() {
 var nappi3 = document.getElementsByTagName('button')[2];
 nappi3.addEventListener('click', myTable);
 
+//Exercise 2
 
 function mouseOver() {
     console.log("Setepped over my a mouse!")
@@ -95,6 +96,8 @@ function mouseOut() {
 var mouseout = document.getElementsByTagName('h2')[1];
 mouseout.addEventListener('mouseout', mouseOut);
 
+//Exercise 3
+
 function textiLuukku() {
     textdata.value = "Please fill in the form with proper data.";
     textdata.style.backgroundColor = "yellow";
@@ -102,3 +105,24 @@ function textiLuukku() {
 var luukku = document.getElementById('textdata');
 luukku.addEventListener('focus', textiLuukku);
 
+
+//Exercise 4
+//Tehnyt alusta asti
+
+//Exercise 5
+
+function showKoordit(event) {
+    var x = event.clientY;
+    var y = event.clientX;
+    var coor = "X coords: " + x + ", Y coords: " + y;
+
+    document.getElementById('coords').innerHTML = coor;
+}
+var paikka = document.getElementById('coordinates');
+paikka.addEventListener('mousemove', showKoordit);
+
+function noshowKoordit() {
+    document.getElementById('coords').innerHTML = "Exercise 5";
+}
+var eipaikka = document.getElementById('coordinates');
+eipaikka.addEventListener('mouseout', noshowKoordit);
