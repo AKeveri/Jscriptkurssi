@@ -106,6 +106,7 @@ var luukku = document.getElementById('textdata');
 luukku.addEventListener('focus', textiLuukku);
 
 
+
 //Exercise 4
 //Tehnyt alusta asti
 
@@ -126,3 +127,6 @@ function noshowKoordit() {
 }
 var eipaikka = document.getElementById('coordinates');
 eipaikka.addEventListener('mouseout', noshowKoordit);
+
+//Exercise 6
+
