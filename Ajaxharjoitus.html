@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let url = "https://www.iltalehti.fi/rss/uutiset.xml"
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+    // Kun vastaus saapuu, niin...
+    xmlhttp.onreadystatechange = function () {
+        // Tarkista että kaikki ok
+
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            // Aseta vastauksen sisältö myDiv-nimiseen lohkoon
+
+            // console.log( xmlhttp.responseXML );
+            let xml = xmlhttp.responseXML;
+
+            let titlet = xml.getElementsByTagName('title');
+            let linkit = xml.getElementsByTagName('link');
+            let paiva = xml.getElementsByTagName('pubDate')
+            let img = xml.getElementsByTagName('media:content');
+
+            console.log(titlet);
+
+            for (let i = 0; i < titlet.length; i++) {
+
+                document.write('<a href="' + linkit[i].innerHTML + '"><li>' + titlet[i].innerHTML + '</a>' + paiva[0].innerHTML + '</li>');
+
+                document.write('<img width="300" src="' + img[i].getAttribute('url') + '">');
+            } // for
+
+        } // if
+    } // function
+</script>
+
+</html>
