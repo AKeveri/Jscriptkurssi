@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Otsikko muokkaus */
+h2 {
+    font-family: "Monaco", monospace;
+}
+
+#paaDiv {
+    margin: auto;
+    width: 60%;
+    padding-bottom: 50px;
+
+
+}
+
+#koko {
+    border-radius: 25px;
+    border: 2px solid #797979;
+    padding: 20px;
+
+}
+
+/* Napin muokkaus */
+.nappi:hover {
+    background-color: #13ad0d;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.nappi {
+
+    background-color: #2525a3;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    min-height: 10px;
+    min-width: 20px;
+}
+
+/* Lisäyskentän muokkaus */
+input {
+    width: 80%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url("https://cdn.pixabay.com/photo/2013/07/12/14/53/cart-148964_960_720.png");
+    background-position: left;
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+
+
+/* Listan muokkaus */
+ul {
+    counter-reset: li;
+    list-style: none;
+    padding: 0;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+}
+
+ul li {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    margin: .5em 0;
+    background: #DAD2CA;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: .3s ease-out;
+}
+
+ul li:hover {
+    background: #E9E4E0;
+}
+
+ul li:hover:before {
+    transform: rotate(360deg);
+}
+
+ul li:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #008a81;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+
+/* Ei toimi kunnolla */
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+
+/* Sulku napin muokkaus */
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+
+.close:hover {
+    background: #797979;
+}
